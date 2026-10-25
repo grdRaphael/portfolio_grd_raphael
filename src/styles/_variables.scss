@@ -1,0 +1,33 @@
+// Fond : bleu nuit avec des lueurs chaudes (inspiré du mood board : rouge / orange / bleu).
+// Couleurs choisies pour que le texte blanc dépasse 4,5:1 (WCAG AA) même au centre d'une lueur.
+$red: #c42d1a;
+$orange: #d9581f;
+$blue: #2c5fd6;
+$blue-deep: #1638a8;
+$navy: #0b1a4a;
+$background-color: $navy;
+
+// Texte
+$text-color: #ffffff;
+$text-color--soft: rgba(255, 255, 255, 0.9);
+$status-green: #4ade80;
+
+// Verre 
+$glass-tint: rgb(10, 20, 64);
+$glass-bg: rgba($glass-tint, 0.2);
+$glass-bg--strong: rgba($glass-tint, 0.45);
+$glass-border: rgba(255, 255, 255, 0.28);
+$glass-blur: 22px;
+
+// Arrondis
+$border-radius--l: 40px;
+$border-radius: 24px;
+$border-radius--s: 14px;
+$border-radius--pill: 999px;
+
+// Mise en page
+$content-width: 1200px;
+// Largeur des sections « élargies » (compétences, projets) sur grand écran
+$wide-width: 1680px;
+$page-gutter: clamp(20px, 4vw, 72px);
+$header-height: 72px;
