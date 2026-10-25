@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+    width: min(100% - 40px, $content-width);
+    margin: 0 auto;
+    padding: 40px 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer_sentence {
+    font-size: clamp(26px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+
+    a {
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 6px;
+        transition: text-underline-offset .3s ease;
+
+        &:hover {
+            text-underline-offset: 10px;
+        }
+    }
+}
+
+.footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding-top: 20px;
+    border-top: 1px solid $glass-border;
+    font-size: 14px;
+    // Blanc pur : ce texte n'a pas de verre derrière lui (4,97:1 au centre d'une lueur orange)
+    color: $text-color;
+
+    a {
+        text-decoration: underline;
+    }
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
