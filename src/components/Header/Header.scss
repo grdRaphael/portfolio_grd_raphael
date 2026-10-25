@@ -1,0 +1,87 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+// Bande de verre pleine largeur, sans arrondi, collée en haut de la fenêtre
+.header {
+    @include glass(0, $glass-bg--strong);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-width: 0 0 1px;
+    box-shadow: 0 12px 40px rgba(5, 10, 35, 0.25);
+}
+
+
+.header_inner {
+    width: min(100% - 40px, $content-width);
+    height: $header-height;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    @include mobile {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 12px 0 4px;
+    }
+}
+
+.header_brand {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+
+    em {
+        font-weight: 300;
+    }
+}
+
+.header_list {
+    display: flex;
+    gap: 32px;
+
+    // Sur mobile, les liens défilent horizontalement plutôt que de passer à la ligne
+    @include mobile {
+        gap: 20px;
+        overflow-x: auto;
+        max-width: calc(100vw - 40px);
+        scrollbar-width: none;
+    }
+}
+
+// Un trait sous le texte indique le survol et la section en cours
+.nav_link {
+    position: relative;
+    display: block;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 2px;
+        height: 2px;
+        background: $text-color;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .3s ease, opacity .3s ease;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        opacity: 0.5;
+    }
+}
