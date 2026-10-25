@@ -1,12 +1,9 @@
+import Router from "./Router"
 
-
-function App() {
-
-  return (
-    <>
-      
-    </>
-  )
+const App = () => {
+    return(
+        <Router/>
+    )
 }
 
 export default App
