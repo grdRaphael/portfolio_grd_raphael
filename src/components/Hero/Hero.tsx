@@ -29,21 +29,31 @@ const Hero = () => {
 
             <div className="hero_bottom">
                 <div className="hero_side">
-                    <svg className="hero_star" viewBox="0 0 100 100" aria-hidden="true">
-                        <path d="M50 8v84M14 29l72 42M14 71l72-42" />
-                    </svg>
-                    <div className="hero_actions">
-                        <Link to={{ pathname: "/", hash: "#projets" }} className="hero_cta">
-                            <span className="hero_cta_circle" aria-hidden="true">→</span>
-                            Voir mes projets
-                        </Link>
-                        {/* Le PDF s'ouvre dans le lecteur du navigateur, qui propose de le télécharger.
-                            Même bouton rond que les projets, en verre pour le distinguer */}
-                        <a className="hero_cta" href="/cv-raphael-grondin.pdf" target="_blank" rel="noreferrer">
-                            <span className="hero_cta_circle hero_cta_circle--glass" aria-hidden="true">CV</span>
-                            Mon CV<span className="sr_only"> (PDF, 107 Ko, nouvel onglet)</span>
-                        </a>
-                    </div>
+                    {/* L'étoile devient le lien du CV : un texte circulaire l'entoure et tourne au survol.
+                        Le PDF s'ouvre dans le lecteur du navigateur, qui propose de le télécharger */}
+                    <a className="hero_badge" href="/cv-raphael-grondin.pdf" target="_blank" rel="noreferrer">
+                        <svg className="hero_badge_ring" viewBox="0 0 160 160" aria-hidden="true">
+                            <defs>
+                                {/* Un cercle de rayon 62 tracé en deux demi-arcs : le chemin que suit le texte */}
+                                <path id="hero-badge-circle" d="M 18 80 a 62 62 0 1 1 124 0 a 62 62 0 1 1 -124 0" />
+                            </defs>
+                            <text>
+                                {/* textLength = périmètre du cercle (2 × π × 62 ≈ 389) : le texte fait le tour exact */}
+                                <textPath href="#hero-badge-circle" textLength="389" lengthAdjust="spacing">
+                                    Curriculum vitae · PDF · Curriculum vitae · PDF ·
+                                </textPath>
+                            </text>
+                        </svg>
+                        <svg className="hero_star" viewBox="0 0 100 100" aria-hidden="true">
+                            <path d="M50 8v84M14 29l72 42M14 71l72-42" />
+                        </svg>
+                        {/* Le nom du lien reprend le texte visible (« Curriculum vitae ») : WCAG 2.5.3 */}
+                        <span className="sr_only">Curriculum vitae (PDF, 107 Ko, nouvel onglet)</span>
+                    </a>
+                    <Link to={{ pathname: "/", hash: "#projets" }} className="hero_cta">
+                        <span className="hero_cta_circle" aria-hidden="true">→</span>
+                        Voir mes projets
+                    </Link>
                 </div>
 
                 <h1 id="hero-title" className="hero_title">
