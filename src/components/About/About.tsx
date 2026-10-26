@@ -17,7 +17,7 @@ const About = () => {
                 <div>
                     <dt>Parcours</dt>
                     <dd>
-                        Ancien coach sportif puis responsable de centre chez BodyHit, à La Réunion, j’ai
+                        Ancien coach sportif puis responsable d'un club de fitness, à La Réunion, j’ai
                         écrit mes premières lignes de code avec Google Apps Script, pour automatiser la
                         gestion des adhérents, les relances clients et les rapports. Le plaisir de
                         simplifier le travail quotidien m’a donné envie d’en faire mon métier.
