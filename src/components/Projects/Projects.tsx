@@ -47,7 +47,6 @@ const Projects = () => {
                     ))}
                 </ul>
 
-                {/* Aperçu (ordinateur seulement) : décoratif, les mêmes infos sont dans les liens */}
                 <div className="projects_preview" aria-hidden="true">
                     <div className="projects_preview_top code">
                         <span>{active.code} · {active.year}</span>
