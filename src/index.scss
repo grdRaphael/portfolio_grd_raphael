@@ -115,3 +115,29 @@ section[id] {
     text-transform: uppercase;
 }
 
+// Étiquette en pilule (code du projet, technologies)
+.tag {
+    padding: 6px 14px;
+    border: 1px solid $glass-border;
+    border-radius: $border-radius--pill;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+// Les logos Express et Apple sont noirs : on les inverse pour qu'ils restent visibles sur le fond sombre
+.logo[src$="express.svg"],
+.logo[src$="apple.svg"] {
+    filter: invert(1);
+}
+
+// Masqué à l'écran mais lu par les lecteurs d'écran (« (nouvel onglet) »…)
+.sr_only {
+    @include visually-hidden;
+}
