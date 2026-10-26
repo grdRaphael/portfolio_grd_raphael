@@ -15,8 +15,10 @@
 // Panneau en verre dépoli : le flou s'applique à ce qui se trouve derrière (backdrop-filter)
 @mixin glass($radius: $border-radius, $background: $glass-bg) {
     background: $background;
-    backdrop-filter: blur($glass-blur) saturate(140%);
+    // Le préfixe d'abord, la propriété standard en dernier : sinon le minifieur du build
+    // considère que la version -webkit- remplace la standard, et Chrome n'a plus de flou
     -webkit-backdrop-filter: blur($glass-blur) saturate(140%);
+    backdrop-filter: blur($glass-blur) saturate(140%);
     border: 1px solid $glass-border;
     border-radius: $radius;
     box-shadow:
