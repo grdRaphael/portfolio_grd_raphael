@@ -84,4 +84,14 @@
         transform: scaleX(1);
         opacity: 0.5;
     }
+
+    // Section en cours de lecture (aria-current est aussi annoncé par les lecteurs d'écran)
+    &[aria-current="location"]::after {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+    @include mobile {
+        font-size: 12px;
+    }
 }
