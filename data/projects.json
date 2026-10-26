@@ -1,0 +1,189 @@
+[
+    {
+        "id": "sophie-bluel",
+        "code": "P03",
+        "year": "2026",
+        "title": "Sophie Bluel",
+        "tagline": "De JavaScript à React, jusqu'à la mise en ligne",
+        "category": "Full-stack",
+        "cover": "/projets/sophie-bluel/cover.webp",
+        "video": "/projets/sophie-bluel/video.webm",
+        "captures": [
+            {
+                "src": "/projets/sophie-bluel/desktop.webp",
+                "alt": "Sophie Bluel sur ordinateur"
+            },
+            {
+                "src": "/projets/sophie-bluel/mobile.webp",
+                "alt": "Sophie Bluel sur mobile"
+            }
+        ],
+        "logos": [
+            {
+                "name": "React",
+                "src": "/logos/react.svg"
+            },
+            {
+                "name": "TypeScript",
+                "src": "/logos/typescript.svg"
+            },
+            {
+                "name": "Node.js",
+                "src": "/logos/nodejs.svg"
+            },
+            {
+                "name": "Express",
+                "src": "/logos/express.svg"
+            },
+            {
+                "name": "Sass",
+                "src": "/logos/sass.svg"
+            }
+        ],
+        "context": "Projet 3 de ma formation Développeur Web : le portfolio dynamique d'une architecte d'intérieur, que j'ai d'abord codé en JavaScript, puis réécrit de ma propre initiative en React et TypeScript.",
+        "objectives": "Retrouver toutes les fonctionnalités de la version JS (galerie filtrable, connexion, ajout et suppression de projets) et publier une démo en ligne, ouverte au public et sécurisée.",
+        "stack": "React, TypeScript, Vite et SCSS pour le front ; une API Node.js / Express avec SQLite, optimisée avec Sharp ; hébergement sur Vercel et Alwaysdata.",
+        "skills": "J'ai appris à penser en état plutôt qu'en manipulation du DOM : un toast « Annuler » piloté par un useEffect, des animations de sortie synchronisées avec React. J'ai aussi protégé l'API d'une démo ouverte à tous : vérification des images, limite de débit, plafond de projets.",
+        "results": "La version React égale la version JS et corrige plusieurs de ses défauts. Les images de démo passent de 10,4 Mo à 534 Ko (−95 %) et s'affichent instantanément au rechargement grâce au cache.",
+        "improvements": "Afficher les erreurs de l'API à l'utilisateur, gérer l'expiration de la session et respecter la préférence « réduire les animations ».",
+        "links": {
+            "demo": "https://oc-sophie-bluel-react-version.vercel.app",
+            "github": "https://github.com/grdRaphael/OC-Sophie_Bluel_REACT_version"
+        }
+    },
+    {
+        "id": "kasa",
+        "code": "P05",
+        "year": "2026",
+        "title": "Kasa",
+        "tagline": "Une application de location en React, pensée composant par composant",
+        "category": "Front-end",
+        "cover": "/projets/kasa/cover.webp",
+        "video": "/projets/kasa/video.webm",
+        "captures": [
+            {
+                "src": "/projets/kasa/desktop.webp",
+                "alt": "Kasa sur ordinateur"
+            },
+            {
+                "src": "/projets/kasa/mobile.webp",
+                "alt": "Kasa sur mobile"
+            }
+        ],
+        "logos": [
+            {
+                "name": "React",
+                "src": "/logos/react.svg"
+            },
+            {
+                "name": "TypeScript",
+                "src": "/logos/typescript.svg"
+            },
+            {
+                "name": "Vite",
+                "src": "/logos/vite.svg"
+            },
+            {
+                "name": "Sass",
+                "src": "/logos/sass.svg"
+            },
+            {
+                "name": "React Router",
+                "src": "/logos/react-router-fond-sombre.svg"
+            }
+        ],
+        "context": "Projet 5 de ma formation Développeur Web : refaire en React le site de Kasa, une plateforme de location de logements entre particuliers, à partir d'une maquette Figma.",
+        "objectives": "Construire une application monopage de quatre pages (accueil, fiche logement, à propos, 404) avec des composants réutilisables, fidèle à la maquette sur ordinateur comme sur mobile.",
+        "stack": "React 19 et TypeScript avec Vite, React Router pour la navigation, Sass pour les styles, et une mise en ligne sur Vercel.",
+        "skills": "J'ai appris à concevoir un composant vraiment réutilisable : un seul menu dépliant, qui gère son propre état et reçoit son contenu en children, sert sur deux pages différentes. J'ai aussi construit un carrousel qui tourne en boucle et une route dynamique qui affiche la page 404 quand le logement demandé n'existe pas.",
+        "results": "Le site reprend fidèlement la maquette et s'adapte au mobile, et ses menus s'utilisent au clavier et sont annoncés aux lecteurs d'écran. Les 20 logements viennent d'un fichier JSON décrit par un type TypeScript, prêt à être remplacé par une API.",
+        "improvements": "Ajouter des tests automatisés, rendre le carrousel utilisable au clavier et d'un glissement du doigt, et respecter la préférence « réduire les animations ».",
+        "links": {
+            "demo": "https://oc-projet5-kasa.vercel.app",
+            "github": "https://github.com/grdRaphael/OC-Projet5-Kasa"
+        }
+    },
+    {
+        "id": "mon-vieux-grimoire",
+        "code": "P06",
+        "year": "2026",
+        "title": "Mon Vieux Grimoire",
+        "tagline": "L'API d'un site de notation de livres",
+        "category": "Back-end",
+        "cover": "/projets/mon-vieux-grimoire/cover.webp",
+        "video": "/projets/mon-vieux-grimoire/video.webm",
+        "captures": [
+            {
+                "src": "/projets/mon-vieux-grimoire/desktop.webp",
+                "alt": "Mon Vieux Grimoire sur ordinateur"
+            },
+            {
+                "src": "/projets/mon-vieux-grimoire/mobile.webp",
+                "alt": "Mon Vieux Grimoire sur mobile"
+            }
+        ],
+        "logos": [
+            {
+                "name": "Node.js",
+                "src": "/logos/nodejs.svg"
+            },
+            {
+                "name": "Express",
+                "src": "/logos/express.svg"
+            }
+        ],
+        "context": "Projet 6 de ma formation Développeur Web : développer l'API d'un site de notation de livres, dont le front React était fourni.",
+        "objectives": "Respecter à la lettre le contrat imposé par le front, sécuriser les comptes et les données, et optimiser les images envoyées. J'ai ensuite mis le projet en ligne pour le rendre testable par tous.",
+        "stack": "Node.js 22, Express 5, MongoDB Atlas (Mongoose), JWT, bcrypt, Multer et Sharp pour convertir les images en WebP.",
+        "skills": "J'ai appris à ne jamais faire confiance au client : l'auteur d'un livre est lu dans le token, jamais dans le corps de la requête, et les notes sont recalculées côté serveur. En ligne, j'ai fait tenir deux API dans 256 Mo de mémoire en mesurant avant d'optimiser.",
+        "results": "L'API passe 27 tests d'acceptation, et les couvertures perdent 98 % de leur poids (67,5 Mo → 1,2 Mo). La démo publique a un compte de test et se remet à zéro toute seule toutes les heures.",
+        "improvements": "Automatiser les tests, limiter les tentatives de connexion, et stocker les images hors du serveur.",
+        "links": {
+            "demo": "https://oc-projet6-mon-vieux-grimoire-front-kappa.vercel.app",
+            "github": "https://github.com/grdRaphael/OC-Projet6-Mon-Vieux-Grimoire"
+        }
+    },
+    {
+        "id": "gym-tracker",
+        "code": "PERSO",
+        "year": "2026",
+        "title": "GymTracker",
+        "tagline": "Ma montre reconnaît l'exercice et compte mes répétitions",
+        "category": "Mobile",
+        "cover": "/projets/gym-tracker/cover.webp",
+        "video": "/projets/gym-tracker/video.webm",
+        "captures": [
+            {
+                "src": "/projets/gym-tracker/montre.webp",
+                "alt": "GymTracker sur Apple Watch : détection de l'exercice, saisie de la série et carnet de l'exercice en cours"
+            },
+            {
+                "src": "/projets/gym-tracker/iphone.webp",
+                "alt": "GymTracker sur iPhone : la séance en cours, avec les exercices terminés et le repos"
+            }
+        ],
+        "logos": [
+            {
+                "name": "Swift",
+                "src": "/logos/swift.svg"
+            },
+            {
+                "name": "iOS / watchOS",
+                "src": "/logos/apple.svg"
+            },
+            {
+                "name": "Xcode",
+                "src": "/logos/xcode.svg"
+            }
+        ],
+        "context": "Projet personnel mené à côté de ma formation : je voulais que ma montre tienne mon carnet de musculation à ma place. J'ai conçu et dirigé une app iPhone et Apple Watch entièrement codée par une IA, en jouant le rôle de chef de produit et de testeur.",
+        "objectives": "Reconnaître l'exercice en cours, compter les répétitions et garder un historique fiable, sans sortir le téléphone entre deux séries.",
+        "stack": "Swift et SwiftUI sur iOS 26 et watchOS 26, Create ML et Core ML pour la reconnaissance, CoreMotion, HealthKit, WatchConnectivity et Swift Charts.",
+        "skills": "J'ai appris à piloter un projet complexe par la mesure : chaque réglage est validé sur mes propres séances, avec un critère de succès écrit avant de voir le résultat. Plusieurs solutions clés sont parties de mes observations en salle, comme l'idée que la position du poignet compte plus que son mouvement.",
+        "results": "Sur 24 séances faites avec l'app, la montre a détecté seule 415 séries sur 604. Le modèle, entraîné sur 678 enregistrements que j'ai collectés moi-même (5,9 h de mouvement), a reconnu 23 séries sur 24 lors d'une séance qu'il n'avait jamais vue.",
+        "improvements": "Réduire les fausses détections quand je marche entre deux machines, et rendre le dépôt public avec un README.",
+        "links": {
+            "note": "Application native iPhone et Apple Watch : pas de démo en ligne. Le dépôt GitHub est privé pour l'instant."
+        }
+    }
+]

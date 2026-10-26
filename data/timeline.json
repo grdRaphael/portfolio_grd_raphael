@@ -1,0 +1,32 @@
+[
+    {
+        "date": "2026",
+        "title": "Formation Développeur Web",
+        "place": "OpenClassrooms — en autonomie",
+        "description": "Du JavaScript vanilla à React et TypeScript (Sophie Bluel, Kasa), puis une API Node.js / Express / MongoDB (Mon Vieux Grimoire), jusqu'à la conception et la mise en ligne de ce portfolio."
+    },
+    {
+        "date": "2026",
+        "title": "GymTracker",
+        "place": "Projet personnel — août à octobre",
+        "description": "App iPhone et Apple Watch qui reconnaît l'exercice et compte les répétitions, codée par une IA sous ma direction."
+    },
+    {
+        "date": "2020 — 2025",
+        "title": "Responsable de centre",
+        "place": "BodyHit — Saint-Gilles, La Réunion",
+        "description": "Mes premières lignes de code : des automatisations Google Apps Script pour gérer les adhérents, relancer les clients et générer des rapports."
+    },
+    {
+        "date": "2019 — 2020",
+        "title": "Coordinateur événementiel",
+        "place": "BBR Agency — Melbourne et Perth, Australie",
+        "description": "Un an à travailler en anglais au quotidien, la langue de la documentation et des outils du développement."
+    },
+    {
+        "date": "2011 — 2017",
+        "title": "Licence STAPS APA, puis Master 1 Réhabilitation par les APS",
+        "place": "Universités de La Réunion et de Montpellier",
+        "description": "Sciences du mouvement et rigueur scientifique, une base qu'on retrouve aujourd'hui dans GymTracker."
+    }
+]

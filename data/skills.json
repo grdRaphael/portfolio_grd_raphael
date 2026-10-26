@@ -1,0 +1,110 @@
+[
+    {
+        "title": "Front-end",
+        "items": [
+            {
+                "name": "HTML5 sémantique",
+                "icon": "brands/html5"
+            },
+            {
+                "name": "CSS3 / Sass",
+                "icon": "brands/css"
+            },
+            {
+                "name": "JavaScript ES6+",
+                "icon": "brands/javascript"
+            },
+            {
+                "name": "TypeScript",
+                "icon": "brands/typescript"
+            },
+            {
+                "name": "React",
+                "icon": "brands/react"
+            },
+            {
+                "name": "React Router",
+                "icon": "brands/reactrouter"
+            }
+        ]
+    },
+    {
+        "title": "Back-end",
+        "items": [
+            {
+                "name": "Node.js",
+                "icon": "brands/nodedotjs"
+            },
+            {
+                "name": "Express",
+                "icon": "brands/express"
+            },
+            {
+                "name": "MongoDB / Mongoose",
+                "icon": "brands/mongodb"
+            },
+            {
+                "name": "SQLite / Sequelize",
+                "icon": "brands/sqlite"
+            },
+            {
+                "name": "API REST",
+                "icon": "plugs-connected"
+            },
+            {
+                "name": "JWT",
+                "icon": "brands/jsonwebtokens"
+            }
+        ]
+    },
+    {
+        "title": "Outils",
+        "items": [
+            {
+                "name": "Git / GitHub",
+                "icon": "brands/git"
+            },
+            {
+                "name": "Vite",
+                "icon": "brands/vite"
+            },
+            {
+                "name": "ESLint",
+                "icon": "brands/eslint"
+            },
+            {
+                "name": "Vercel",
+                "icon": "brands/vercel"
+            },
+            {
+                "name": "Figma",
+                "icon": "brands/figma"
+            },
+            {
+                "name": "Lighthouse / WAVE",
+                "icon": "brands/lighthouse"
+            }
+        ]
+    },
+    {
+        "title": "Savoir-être",
+        "items": [
+            {
+                "name": "Autonomie",
+                "icon": "compass"
+            },
+            {
+                "name": "Rigueur",
+                "icon": "target"
+            },
+            {
+                "name": "Curiosité",
+                "icon": "magnifying-glass"
+            },
+            {
+                "name": "Documentation de mon travail",
+                "icon": "notebook"
+            }
+        ]
+    }
+]
