@@ -141,3 +141,12 @@ section[id] {
 .sr_only {
     @include visually-hidden;
 }
+
+// Texte à remplacer dans la version finale
+.todo {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px dashed rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    padding: 0 6px;
+    font-style: italic;
+}

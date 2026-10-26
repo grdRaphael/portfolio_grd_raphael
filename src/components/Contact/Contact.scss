@@ -1,0 +1,101 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+.contact_intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact_text {
+    font-size: 20px;
+    color: $text-color--soft;
+}
+
+.contact_links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    a {
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact_field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    input,
+    textarea {
+        @include glass($border-radius--s, rgba(255, 255, 255, 0.1));
+        box-shadow: none;
+        padding: 12px 16px;
+        resize: vertical;
+
+        &[aria-invalid="true"] {
+            border-color: #ffd2c4;
+            border-width: 2px;
+        }
+    }
+}
+
+.contact_error {
+    font-size: 14px;
+    font-weight: 600;
+
+    &::before {
+        content: "⚠ ";
+    }
+}
+
+.contact_submit {
+    align-self: flex-start;
+    padding: 14px 32px;
+    border: none;
+    border-radius: $border-radius--pill;
+    background-color: $text-color;
+    color: $blue-deep;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+}
+
+// Le champ pot de miel est sorti de l'écran (pas display: none, que certains robots repèrent)
+.contact_honeypot {
+    position: absolute;
+    left: -9999px;
+}
