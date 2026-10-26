@@ -15,3 +15,64 @@
     flex-wrap: wrap;
 }
 
+// La liste à gauche, l'aperçu à droite, dans un seul panneau de verre
+.projects_index {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 56px;
+    align-items: center;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.projects_preview {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    @include mobile {
+        display: none;
+    }
+}
+
+.projects_preview_top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects_preview_image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: $border-radius--s;
+    border: 1px solid $glass-border;
+    overflow: hidden;
+
+    img {
+        @include cover-image;
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity .4s ease;
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+        }
+    }
+
+    .is_visible {
+        opacity: 1;
+    }
+}
+
+// La vidéo se pose par-dessus l'image, au même format 4:3
+.projects_preview_video {
+    @include cover-image;
+    position: absolute;
+    inset: 0;
+}
+
+.projects_preview_tagline {
+    color: $text-color--soft;
+}

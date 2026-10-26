@@ -1,0 +1,91 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.project_row {
+    border-top: 1px solid $glass-border;
+
+    &:last-child {
+        border-bottom: 1px solid $glass-border;
+    }
+
+    // Titres décalés, comme dans une mise en page de magazine
+    @media (min-width: 769px) {
+        &:nth-child(3n + 2) .project_row_title {
+            padding-left: 10%;
+        }
+
+        &:nth-child(3n + 3) .project_row_title {
+            padding-left: 5%;
+        }
+    }
+}
+
+.project_row_link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 0;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 24px 0;
+    }
+}
+
+// Lignes inactives atténuées, posées directement sur le fond :
+// blanc à 65 % = 3,7:1 au centre d'une lueur orange (seuil grand texte : 3:1)
+.project_row_title {
+    flex: 1;
+    font-size: clamp(40px, 5.5vw, 76px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: rgba($text-color, 0.65);
+    transition: color .3s ease;
+
+    // Pas de survol sur mobile : toutes les lignes en blanc
+    @include mobile {
+        color: $text-color;
+    }
+}
+
+// Petit texte : 90 % minimum sans verre derrière (5,5:1 au pire endroit)
+.project_row_code {
+    color: rgba($text-color, 0.9);
+    white-space: nowrap;
+    transition: color .3s ease;
+}
+
+.project_row--active {
+    .project_row_title,
+    .project_row_code {
+        color: $text-color;
+    }
+}
+
+// Image : visible seulement sur mobile (sur ordinateur, c'est l'aperçu à droite qui la montre)
+.project_row_image {
+    display: none;
+
+    @include mobile {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: $border-radius--s;
+        border: 1px solid $glass-border;
+    }
+}
+
+// Phrase : affichée sur mobile ; sur ordinateur, masquée à l'écran (l'aperçu l'affiche)
+// mais gardée pour les lecteurs d'écran, qui lisent l'aperçu comme décoratif
+.project_row_tagline {
+    color: $text-color--soft;
+
+    @media (min-width: 769px) {
+        @include visually-hidden;
+    }
+}
