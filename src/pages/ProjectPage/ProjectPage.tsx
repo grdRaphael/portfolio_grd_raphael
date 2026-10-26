@@ -41,7 +41,7 @@ const ProjectPage = () => {
                     </span>
                     <h1 id="project-title" className="project_title">{project.title}</h1>
                     <p className="project_tagline">{project.tagline}</p>
-                    <ul className="project_logos">
+                    <ul className="project_logos" role="list">
                         {project.logos.map((logo) => (
                             <li className="tag" key={logo.name}>
                                 <img className="logo" src={logo.src} alt="" width="20" height="20" />
@@ -66,12 +66,15 @@ const ProjectPage = () => {
 
                 <div className="project_media">
                     {project.video && !reduceMotion ? (
+                        // controls : la vidéo dure un peu plus de 5 s et démarre seule,
+                        // il faut pouvoir la mettre en pause (WCAG 2.2.2)
                         <video
                             src={project.video}
                             poster={project.cover}
                             autoPlay
                             muted
                             playsInline
+                            controls
                             aria-label={`Présentation animée du projet ${project.title}`}
                         />
                     ) : (
