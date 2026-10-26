@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 import "./Footer.scss"
 
 // Version du site, à mettre à jour à chaque mise en ligne (idée vue chez Lynn Fisher et Ev Astapov)
-const VERSION = "v2.0"
-const UPDATED = "22/10/2026"
+const VERSION = "v1.0"
+const UPDATED = "26/10/2026"
 
 const Footer = () => {
     return (
@@ -22,9 +22,15 @@ const Footer = () => {
                 {/* Idée vue chez Keziah Moselle : dire ce que le site ne fait pas */}
                 <p>
                     Aucun traceur, aucune donnée collectée —{" "}
-                    <a href="https://github.com/grdRaphael/portfolio_grd_raphael" >code source sur GitHub</a>
+                    <a href="https://github.com/grdRaphael/portfolio_grd_raphael" target="_blank" rel="noreferrer">code source sur GitHub<span className="sr_only"> (nouvel onglet)</span></a>
                 </p>
                 <p className="code">{VERSION} · mis à jour le {UPDATED}</p>
+                {/* Crédits des logos et icônes utilisés (détail dans INSPIRATIONS.md) */}
+                <p>
+                    Logos : <a href="https://devicon.dev" target="_blank" rel="noreferrer">Devicon<span className="sr_only"> (nouvel onglet)</span></a>
+                    {" · "}<a href="https://simpleicons.org" target="_blank" rel="noreferrer">Simple Icons<span className="sr_only"> (nouvel onglet)</span></a>
+                    {" · "}Icônes : <a href="https://phosphoricons.com" target="_blank" rel="noreferrer">Phosphor<span className="sr_only"> (nouvel onglet)</span></a>
+                </p>
             </div>
         </footer>
     )
