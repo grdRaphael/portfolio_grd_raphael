@@ -22,7 +22,7 @@ const Hero = () => {
                     </div>
                     <div>
                         <dt>Heure locale</dt>
-                        <dd><span>Saint-Leu, La Réunion</span> · <Clock /></dd>
+                        <dd>Saint-Leu, La Réunion · <Clock /></dd>
                     </div>
                 </dl>
             </div>
