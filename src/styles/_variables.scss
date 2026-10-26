@@ -19,6 +19,9 @@ $glass-bg--strong: rgba($glass-tint, 0.45);
 $glass-border: rgba(255, 255, 255, 0.28);
 $glass-blur: 22px;
 
+// Filets : celui qui ouvre une section est plus marqué que ceux qui séparent les éléments à l'intérieur
+$section-border: rgba(255, 255, 255, 0.6);
+
 // Arrondis
 $border-radius--l: 40px;
 $border-radius: 24px;

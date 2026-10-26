@@ -80,7 +80,8 @@ section[id] {
 // Le verre est réservé aux éléments d'interface : en-tête, Hero, filtres, champs du formulaire.
 .block {
     padding-top: 40px;
-    border-top: 1px solid $glass-border;
+    // Filet plus marqué que les séparations internes (lignes de projets, rubriques…)
+    border-top: 1px solid $section-border;
 }
 
 // Section élargie (breakout) : elle dépasse la colonne de 1 200 px sur les grands écrans.

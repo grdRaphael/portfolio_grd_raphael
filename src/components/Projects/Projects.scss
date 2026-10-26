@@ -4,7 +4,12 @@
 .projects {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    // Plus d'espace entre le titre de section et la liste : les deux niveaux ne se confondent pas
+    gap: 56px;
+
+    @include mobile {
+        gap: 32px;
+    }
 }
 
 .projects_header {
