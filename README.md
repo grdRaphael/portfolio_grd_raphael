@@ -2,7 +2,7 @@
 
 Portfolio de développeur web full-stack, réalisé pour le projet 8 de la formation Développeur Web d'OpenClassrooms.
 
-**Démo en ligne : [à ajouter après la mise en ligne sur Vercel]**
+**Démo en ligne : [portfolio-grd-raphael.vercel.app](https://portfolio-grd-raphael.vercel.app/)**
 
 ## Ce que présente le site
 

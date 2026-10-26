@@ -17,9 +17,10 @@ const About = () => {
                 <div>
                     <dt>Parcours</dt>
                     <dd>
-                        Ancien coach sportif et responsable de club, j’ai découvert le développement en
-                        automatisant des tâches dans notre outil de suivi client sur Google Sheets. Le
-                        plaisir de simplifier le travail quotidien m’a donné envie d’en faire mon métier.
+                        Ancien coach sportif puis responsable de centre chez BodyHit, à La Réunion, j’ai
+                        écrit mes premières lignes de code avec Google Apps Script, pour automatiser la
+                        gestion des adhérents, les relances clients et les rapports. Le plaisir de
+                        simplifier le travail quotidien m’a donné envie d’en faire mon métier.
                     </dd>
                 </div>
                 <div>
