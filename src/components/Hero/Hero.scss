@@ -1,0 +1,169 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+    @include glass($border-radius--l);
+    min-height: calc(100dvh - #{$header-height} - 64px);
+    padding: 56px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 48px;
+
+    @include mobile {
+        min-height: auto;
+        padding: 32px 24px;
+        border-radius: $border-radius;
+    }
+}
+
+.hero_top {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.hero_label {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.hero_infos {
+    display: flex;
+    gap: 44px;
+    flex-wrap: wrap;
+
+    dt {
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    dd {
+        font-size: 15px;
+        font-weight: 500;
+        color: $text-color--soft;
+    }
+
+    // Chiffres de même largeur : l'horloge ne « tremble » pas à chaque seconde
+    time {
+        font-variant-numeric: tabular-nums;
+    }
+
+    @include mobile {
+        gap: 20px;
+    }
+}
+
+// Point vert de disponibilité (idée vue chez Gaël Manzola et Joseph).
+// Le mot « Disponible » reste écrit : la couleur seule ne suffit pas à transmettre l'information.
+.hero_status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $status-green;
+        animation: pulse 2s ease-out infinite;
+
+        @media (prefers-reduced-motion: reduce) {
+            animation: none;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba($status-green, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 0 8px rgba($status-green, 0);
+    }
+}
+
+.hero_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+
+    @include mobile {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+.hero_side {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.hero_star {
+    width: 96px;
+    height: 96px;
+    stroke: $text-color;
+    stroke-width: 15;
+    stroke-linecap: square;
+    fill: none;
+
+    @include mobile {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+.hero_cta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 14px;
+    font-weight: 600;
+
+    &:hover .hero_cta_circle {
+        background-color: $text-color;
+        color: $blue-deep;
+    }
+}
+
+.hero_cta_circle {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border: 1.5px solid $text-color;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.hero_title {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    text-shadow: 0 2px 30px rgba(10, 18, 60, 0.25);
+}
+
+.hero_kicker {
+    font-size: clamp(16px, 2vw, 26px);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+.hero_big {
+    font-size: clamp(40px, 12.5vw, 168px);
+    white-space: nowrap;
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+}
