@@ -78,6 +78,10 @@
     inset: 0;
 }
 
+// La phrase change de longueur d'un projet à l'autre (une ou deux lignes). Sans hauteur réservée,
+// l'aperçu grandit ou rétrécit, la ligne de la grille aussi, et la liste centrée à gauche « saute ».
+// On réserve donc toujours deux lignes (hauteur de ligne 1,6 × 2 = 3,2em).
 .projects_preview_tagline {
+    min-height: 3.2em;
     color: $text-color--soft;
 }
