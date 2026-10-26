@@ -17,7 +17,7 @@ const Header = () => {
     const [active, setActive] = useState<string | null>(null)
 
     // Met en avant le lien de la section en cours de lecture (idée vue chez Brittany Chiang).
-    // L'IntersectionObserver prévient un élément entre ou sort dans un telle zone de l'écran
+    // L'IntersectionObserver prévient quand un élément entre dans une zone de l'écran ou en sort
     useEffect(() => {
         // Les sections n'existent que sur l'accueil
         if (pathname !== "/") return
@@ -53,7 +53,7 @@ const Header = () => {
                     Raphaël <em>Grondin</em>
                 </Link>
                 <nav className="header_nav" aria-label="Navigation principale">
-                    <ul className="header_list">
+                    <ul className="header_list" role="list">
                         {links.map((link) => (
                             <li key={link.hash}>
                                 <Link

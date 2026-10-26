@@ -36,7 +36,7 @@ const Projects = () => {
             </div>
 
             <div className="projects_index">
-                <ul className="projects_list">
+                <ul className="projects_list" role="list">
                     {visibleProjects.map((project) => (
                         <ProjectRow
                             key={project.id}

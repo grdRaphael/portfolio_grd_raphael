@@ -80,7 +80,7 @@ const Contact = () => {
             <div className="contact_intro">
                 <h2 id="contact-title" className="section_title section_title--numbered">Contact</h2>
                 <p className="contact_text">Un poste, un projet, une question ? Écrivez-moi.</p>
-                <ul className="contact_links">
+                <ul className="contact_links" role="list">
                     <li>
                         <a href="https://github.com/grdRaphael" target="_blank" rel="noreferrer">
                             GitHub<span className="sr_only"> (nouvel onglet)</span>

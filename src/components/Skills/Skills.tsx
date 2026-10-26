@@ -9,7 +9,7 @@ const Skills = () => {
                 {skills.map((group) => (
                     <article className="skills_card" key={group.title}>
                         <h3 className="skills_card_title">{group.title}</h3>
-                        <ul className="skills_list">
+                        <ul className="skills_list" role="list">
                             {group.items.map((item) => (
                                 <li className="skills_item" key={item.name}>
                                     <img className="skills_icon" src={`/icons/${item.icon}.svg`} alt="" width="22" height="22" />

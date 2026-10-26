@@ -36,6 +36,7 @@ img, video {
     max-width: 100%;
 }
 
+// Sans puces : Safari retire alors la sémantique de liste, d'où role="list" sur les listes du site
 ul {
     list-style: none;
 }
