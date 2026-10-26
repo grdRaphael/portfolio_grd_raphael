@@ -74,6 +74,40 @@ section[id] {
     }
 }
 
+// Classes partagées par plusieurs sections
+// .block = section de contenu posée directement sur le fond, ouverte par un filet fin.
+// Le verre est réservé aux éléments d'interface : en-tête, Hero, filtres, champs du formulaire.
+.block {
+    padding-top: 40px;
+    border-top: 1px solid $glass-border;
+}
+
+// Section élargie (breakout) : elle dépasse la colonne de 1 200 px sur les grands écrans.
+// main est une colonne flex : align-self: center centre la section même quand elle est plus large que lui.
+.block--wide {
+    align-self: center;
+    width: min(calc(100vw - 2 * #{$page-gutter}), #{$wide-width});
+}
+
+.section_title {
+    @include section-title;
+}
+
+// Sections numérotées 01, 02… avec un compteur CSS (idée vue chez Gaël Manzola) :
+// le numéro suit l'ordre des sections, sans l'écrire dans le HTML
+.section_title--numbered {
+    counter-increment: section;
+
+    &::before {
+        content: counter(section, decimal-leading-zero) " —";
+        display: block;
+        margin-bottom: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+    }
+}
+
 .code {
     font-size: 13px;
     font-weight: 600;

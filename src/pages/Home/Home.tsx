@@ -1,11 +1,13 @@
+import About from "../../components/About/About"
 import Hero from "../../components/Hero/Hero"
+import Skills from "../../components/Skills/Skills"
 
 const Home = () => {
    return (
       <>
          <Hero/>
-         <section id="projets">Projets</section>
-         <section id="contact">Contact</section>
+         <About/>
+         <Skills/>
       </>
    )
 }
