@@ -66,9 +66,18 @@ main {
     }
 }
 
+section[id] {
+    scroll-margin-top: $header-height + 16px;
+
+    @include mobile {
+        scroll-margin-top: 112px;
+    }
+}
+
 .code {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
 }
+
