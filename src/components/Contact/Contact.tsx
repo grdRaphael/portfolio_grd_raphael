@@ -87,6 +87,11 @@ const Contact = () => {
                         </a>
                     </li>
                     <li><a href={`mailto:${myEmail}`}>{myEmail}</a></li>
+                    <li>
+                        <a href="/cv-raphael-grondin.pdf" target="_blank" rel="noreferrer">
+                            CV<span className="sr_only"> (PDF, 107 Ko, nouvel onglet)</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
 

@@ -106,6 +106,13 @@
     gap: 28px;
 }
 
+// Les deux boutons ronds côte à côte : les projets, puis le CV
+.hero_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+}
+
 .hero_star {
     width: 96px;
     height: 96px;
@@ -126,6 +133,8 @@
     gap: 14px;
     font-size: 14px;
     font-weight: 600;
+    // Le libellé reste sur une ligne, même quand le grand titre prend toute la place
+    white-space: nowrap;
 
     &:hover .hero_cta_circle {
         background-color: $text-color;
@@ -143,6 +152,16 @@
     border-radius: 50%;
     font-size: 22px;
     transition: background-color .3s ease, color .3s ease;
+
+    // Variante du CV : fond de verre et lettres « CV » plus petites que la flèche
+    &--glass {
+        @include glass(50%);
+        box-shadow: none;
+        border: 1.5px solid $text-color;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+    }
 }
 
 .hero_title {

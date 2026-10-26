@@ -32,10 +32,18 @@ const Hero = () => {
                     <svg className="hero_star" viewBox="0 0 100 100" aria-hidden="true">
                         <path d="M50 8v84M14 29l72 42M14 71l72-42" />
                     </svg>
-                    <Link to={{ pathname: "/", hash: "#projets" }} className="hero_cta">
-                        <span className="hero_cta_circle" aria-hidden="true">→</span>
-                        Voir mes projets
-                    </Link>
+                    <div className="hero_actions">
+                        <Link to={{ pathname: "/", hash: "#projets" }} className="hero_cta">
+                            <span className="hero_cta_circle" aria-hidden="true">→</span>
+                            Voir mes projets
+                        </Link>
+                        {/* Le PDF s'ouvre dans le lecteur du navigateur, qui propose de le télécharger.
+                            Même bouton rond que les projets, en verre pour le distinguer */}
+                        <a className="hero_cta" href="/cv-raphael-grondin.pdf" target="_blank" rel="noreferrer">
+                            <span className="hero_cta_circle hero_cta_circle--glass" aria-hidden="true">CV</span>
+                            Mon CV<span className="sr_only"> (PDF, 107 Ko, nouvel onglet)</span>
+                        </a>
+                    </div>
                 </div>
 
                 <h1 id="hero-title" className="hero_title">
