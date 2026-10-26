@@ -19,7 +19,7 @@ const ProjectPage = () => {
         return <Error />
     }
 
-    // Les 6 rubriques de la fiche projet demandées par les consignes
+
     const sections = [
         { title: "Contexte", text: project.context },
         { title: "Objectifs", text: project.objectives },
