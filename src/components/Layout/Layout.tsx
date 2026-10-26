@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import './Layout.scss'
+import Background from "../Background/Background"
 
 const Layout = () => {
     const { pathname, hash } = useLocation()
@@ -19,6 +20,7 @@ const Layout = () => {
     return (
         <div className="layout">
             <a className="skip_link" href="#contenu">Aller au contenu</a>
+            <Background/>
             <Header/>
             <main id="contenu">
                 <Outlet />

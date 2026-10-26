@@ -1,0 +1,59 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background:
+        radial-gradient(90% 70% at 100% 100%, rgba($blue, 0.35) 0%, transparent 70%),
+        linear-gradient(160deg, #13286e 0%, $navy 60%);
+
+    // Grain par-dessus les lueurs (technique de l'article « Grainy Gradients » de CSS-Tricks) :
+    // un bruit SVG répété en mosaïque. Le verre le floute, ce qui renforce l'effet de verre dépoli.
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("/noise.svg");
+        background-size: 200px;
+        opacity: 0.4;
+        mix-blend-mode: overlay;
+    }
+}
+
+.background_blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+    filter: blur(100px);
+
+    &--red {
+        width: 45vw;
+        height: 60vh;
+        top: -15vh;
+        left: -10vw;
+        background: $red;
+    }
+
+    &--orange {
+        width: 32vw;
+        height: 45vh;
+        top: 20vh;
+        left: 18vw;
+        background: $orange;
+    }
+
+    &--blue {
+        width: 50vw;
+        height: 50vh;
+        bottom: -15vh;
+        right: -10vw;
+        background: $blue;
+    }
+
+    @include mobile {
+        filter: blur(60px);
+    }
+}
