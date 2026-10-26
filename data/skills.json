@@ -3,28 +3,28 @@
         "title": "Front-end",
         "items": [
             {
-                "name": "HTML5 sémantique",
-                "icon": "brands/html5"
-            },
-            {
-                "name": "CSS3 / Sass",
-                "icon": "brands/css"
-            },
-            {
-                "name": "JavaScript ES6+",
-                "icon": "brands/javascript"
+                "name": "React",
+                "icon": "brands/react"
             },
             {
                 "name": "TypeScript",
                 "icon": "brands/typescript"
             },
             {
-                "name": "React",
-                "icon": "brands/react"
-            },
-            {
                 "name": "React Router",
                 "icon": "brands/reactrouter"
+            },
+            {
+                "name": "JavaScript ES6+",
+                "icon": "brands/javascript"
+            },
+            {
+                "name": "HTML5 sémantique",
+                "icon": "brands/html5"
+            },
+            {
+                "name": "CSS3 / Sass",
+                "icon": "brands/css"
             }
         ]
     },
@@ -42,10 +42,6 @@
             {
                 "name": "MongoDB / Mongoose",
                 "icon": "brands/mongodb"
-            },
-            {
-                "name": "SQLite / Sequelize",
-                "icon": "brands/sqlite"
             },
             {
                 "name": "API REST",
