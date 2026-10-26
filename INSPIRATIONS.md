@@ -63,12 +63,14 @@ Les portfolios de Gaël, Keziah et Joseph sont les trois exemples d'anciens étu
 
 ---
 
-## 5. Polices, logos et icônes (crédités dans le pied de page du site)
+## 5. Polices, logos et icônes
+
+Le texte des licences MIT accompagne les fichiers : `public/logos/LICENSE.txt` (Devicon) et `public/icons/LICENSE.txt` (Phosphor).
 
 | Ressource | Lien | Licence | Utilisation |
 |---|---|---|---|
 | Manrope | [fonts.google.com/specimen/Manrope](https://fonts.google.com/specimen/Manrope) | SIL Open Font License | Police unique du site |
-| Devicon | [devicon.dev](https://devicon.dev) | MIT | Logos des technologies sur les projets (`public/logos/`) |
+| Devicon | [devicon.dev](https://devicon.dev) | MIT | Logos des technologies sur les projets (`public/logos/`, licence dans `public/logos/LICENSE.txt`) |
 | Simple Icons | [simpleicons.org](https://simpleicons.org) | CC0 | Logos officiels en blanc dans Compétences (`public/icons/brands/`) |
 | Phosphor Icons | [phosphoricons.com](https://phosphoricons.com) | MIT | Icônes au trait pour API REST et les savoir-être (`public/icons/`, licence dans `public/icons/LICENSE.txt`) |
 
