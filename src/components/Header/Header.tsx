@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import "./Header.scss"
 
@@ -15,6 +15,26 @@ const Header = () => {
     const { pathname } = useLocation()
     // L'ancre de la section en cours de lecture, ou null si aucune
     const [active, setActive] = useState<string | null>(null)
+    // Menu mobile ouvert ou fermé (sur ordinateur, la navigation est toujours visible)
+    const [open, setOpen] = useState(false)
+    // Le bouton du menu, pour lui rendre le focus quand on ferme avec Échap
+    const toggleRef = useRef<HTMLButtonElement>(null)
+
+    // Échap ferme le menu et remet le focus sur le bouton : le visiteur au clavier ne se perd pas
+    useEffect(() => {
+        if (!open) return
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") {
+                setOpen(false)
+                toggleRef.current?.focus()
+            }
+        }
+        document.addEventListener("keydown", handleKeyDown)
+
+        // Nettoyage : on n'écoute plus le clavier une fois le menu fermé
+        return () => document.removeEventListener("keydown", handleKeyDown)
+    }, [open])
 
     // Met en avant le lien de la section en cours de lecture (idée vue chez Brittany Chiang).
     // L'IntersectionObserver prévient quand un élément entre dans une zone de l'écran ou en sort
@@ -49,10 +69,28 @@ const Header = () => {
     return (
         <header className="header">
             <div className="header_inner">
-                <Link to="/" className="header_brand">
+                <Link to="/" className="header_brand" onClick={() => setOpen(false)}>
                     Raphaël <em>Grondin</em>
                 </Link>
-                <nav className="header_nav" aria-label="Navigation principale">
+                {/* Bouton du menu (mobile seulement) : aria-expanded annonce s'il est ouvert,
+                    aria-controls le relie à la navigation qu'il affiche */}
+                <button
+                    ref={toggleRef}
+                    type="button"
+                    className="header_toggle"
+                    aria-expanded={open}
+                    aria-controls="navigation-principale"
+                    onClick={() => setOpen((current) => !current)}
+                >
+                    <span className="sr_only">Menu</span>
+                    <span className="header_toggle_bar header_toggle_bar--top" aria-hidden="true" />
+                    <span className="header_toggle_bar header_toggle_bar--bottom" aria-hidden="true" />
+                </button>
+                <nav
+                    id="navigation-principale"
+                    className={`header_nav ${open ? "header_nav--open" : ""}`}
+                    aria-label="Navigation principale"
+                >
                     <ul className="header_list" role="list">
                         {links.map((link) => (
                             <li key={link.hash}>
@@ -60,6 +98,7 @@ const Header = () => {
                                     to={{ pathname: "/", hash: link.hash }}
                                     className="nav_link"
                                     aria-current={active === link.hash ? "location" : undefined}
+                                    onClick={() => setOpen(false)}
                                 >
                                     {link.label}
                                 </Link>

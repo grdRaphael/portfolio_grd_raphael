@@ -6,12 +6,8 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    // La bande d'en-tête est fixe : on décale le contenu de sa hauteur (une seule ligne, même sur mobile)
     padding-top: $header-height + 32px;
-
-    // Sur mobile, la bande passe sur deux lignes (nom puis liens)
-    @include mobile {
-        padding-top: 112px;
-    }
 }
 
 // Lien d'évitement : caché jusqu'à ce qu'il reçoive le focus clavier

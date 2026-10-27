@@ -22,14 +22,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-
-    @include mobile {
-        height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-        padding: 12px 0 4px;
-    }
 }
 
 .header_brand {
@@ -43,16 +35,87 @@
     }
 }
 
+// Bouton du menu : deux traits qui se croisent en X quand le menu est ouvert
+.header_toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+
+    @include mobile {
+        // grid + place-items : les deux traits se superposent au centre du bouton
+        display: grid;
+        place-items: center;
+    }
+}
+
+.header_toggle_bar {
+    grid-area: 1 / 1;
+    width: 24px;
+    height: 2px;
+    background: $text-color;
+    transition: transform .3s ease;
+
+    &--top {
+        transform: translateY(-4px);
+    }
+
+    &--bottom {
+        transform: translateY(4px);
+    }
+
+    // Menu ouvert : les deux traits pivotent et forment une croix.
+    // Le style suit aria-expanded : l'état annoncé aux lecteurs d'écran et l'état affiché ne font qu'un
+    .header_toggle[aria-expanded="true"] &--top {
+        transform: rotate(45deg);
+    }
+
+    .header_toggle[aria-expanded="true"] &--bottom {
+        transform: rotate(-45deg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+}
+
+// Sur mobile, la navigation devient un panneau sous la bande, fermé par défaut.
+// display: none retire les liens du parcours au clavier quand le menu est fermé.
+.header_nav {
+    @include mobile {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 8px 20px 24px;
+        // Fond opaque : les grands liens passent par-dessus le texte de la page et doivent rester lisibles.
+        // (Un flou imbriqué dans la bande, elle-même floutée, ne voyait pas la page derrière.)
+        background: $glass-tint;
+        border-bottom: 1px solid $glass-border;
+
+        &--open {
+            display: block;
+        }
+    }
+}
+
 .header_list {
     display: flex;
     gap: 32px;
 
-    // Sur mobile, les liens défilent horizontalement plutôt que de passer à la ligne
+    // Sur mobile : une colonne de grands liens numérotés 01 → 05, comme les sections de la page
     @include mobile {
-        gap: 20px;
-        overflow-x: auto;
-        max-width: calc(100vw - 40px);
-        scrollbar-width: none;
+        flex-direction: column;
+        gap: 0;
+        counter-reset: menu;
+
+        li {
+            border-bottom: 1px solid $glass-border;
+        }
     }
 }
 
@@ -92,6 +155,22 @@
     }
 
     @include mobile {
-        font-size: 12px;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 14px;
+        padding: 16px 0;
+        font-size: 24px;
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: -0.01em;
+        counter-increment: menu;
+
+        // Le numéro du lien, généré par le compteur CSS (même idée que les titres de section)
+        &::before {
+            content: counter(menu, decimal-leading-zero);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+        }
     }
 }

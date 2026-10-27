@@ -69,10 +69,6 @@ main {
 
 section[id] {
     scroll-margin-top: $header-height + 16px;
-
-    @include mobile {
-        scroll-margin-top: 112px;
-    }
 }
 
 // Classes partagées par plusieurs sections
