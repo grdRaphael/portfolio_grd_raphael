@@ -136,7 +136,7 @@
         "objectives": "Respecter à la lettre le contrat imposé par le front, sécuriser les comptes et les données, et optimiser les images envoyées. J'ai ensuite mis le projet en ligne pour le rendre testable par tous.",
         "stack": "Node.js 22, Express 5, MongoDB Atlas (Mongoose), JWT, bcrypt, Multer et Sharp pour convertir les images en WebP.",
         "skills": "J'ai appris à ne jamais faire confiance au client : l'auteur d'un livre est lu dans le token, jamais dans le corps de la requête, et les notes sont recalculées côté serveur. En ligne, j'ai fait tenir deux API dans 256 Mo de mémoire en mesurant avant d'optimiser.",
-        "results": "L'API passe 27 tests d'acceptation, et les couvertures perdent 98 % de leur poids (67,5 Mo → 1,2 Mo). La démo publique a un compte de test et se remet à zéro toute seule toutes les heures.",
+        "results": "Chaque route est testée avec Postman, y compris les cas qui doivent être refusés, et les couvertures perdent 98 % de leur poids (67,5 Mo → 1,2 Mo). La démo publique a un compte de test et se remet à zéro toute seule toutes les heures.",
         "improvements": "Automatiser les tests, limiter les tentatives de connexion, et stocker les images hors du serveur.",
         "links": {
             "demo": "https://oc-projet6-mon-vieux-grimoire-front-kappa.vercel.app",
