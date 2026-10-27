@@ -21,8 +21,10 @@ const ProjectRow = ({ project, isActive, onActivate }: ProjectRowProps) => {
             >
                 <h3 className="project_row_title">{project.title}</h3>
                 <span className="project_row_code code">{project.code} · {project.category}</span>
-                {/* Sur mobile (pas de survol), l'image et la phrase s'affichent dans la ligne */}
-                <img className="project_row_image" src={project.cover} alt="" loading="lazy" decoding="async" />
+                {/* Sur mobile (pas de survol), l'image et la phrase s'affichent dans la ligne.
+                    Pas de loading="lazy" : c'est le même fichier que l'aperçu, déjà téléchargé de toute façon,
+                    et Chrome n'affichait parfois pas une image « lazy » cachée puis révélée par une media query */}
+                <img className="project_row_image" src={project.cover} alt="" />
                 <p className="project_row_tagline">{project.tagline}</p>
             </Link>
         </li>
