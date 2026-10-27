@@ -8,10 +8,17 @@
     padding: 6px;
     width: fit-content;
 
+    // Sur mobile : plus de grande pilule en verre qui défile. Chaque filtre devient sa propre pastille
+    // bordée, et elles passent à la ligne : tous les filtres sont visibles, et on voit que ce sont des boutons.
     @include mobile {
-        width: 100%;
-        overflow-x: auto;
-        scrollbar-width: none;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
     }
 
     &__btn {
@@ -33,6 +40,21 @@
         &--active:hover {
             background-color: $text-color;
             color: $blue-deep;
+        }
+
+        // Sur mobile, la bordure fait de chaque filtre un bouton reconnaissable
+        @include mobile {
+            padding: 10px 18px;
+            border: 1px solid $glass-border;
+            background-color: rgba(255, 255, 255, 0.08);
+
+            // Répété ici : la règle mobile ci-dessus, écrite après, écraserait le fond blanc de la pastille active
+            &--active,
+            &--active:hover {
+                border-color: $text-color;
+                background-color: $text-color;
+                color: $blue-deep;
+            }
         }
     }
 }

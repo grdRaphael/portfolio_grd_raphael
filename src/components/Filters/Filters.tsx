@@ -8,22 +8,22 @@ type FiltersProps = {
 }
 
 const Filters = ({ filter, setFilter, categories }: FiltersProps) => {
+    // « Tous » (valeur null) puis une option par catégorie : une seule liste, un seul map
+    const options = [
+        { label: "Tous", value: null },
+        ...categories.map((category) => ({ label: category, value: category })),
+    ]
+
     return (
         <div className="filters" role="group" aria-label="Filtrer les projets">
-            <button
-                type="button"
-                className={`filters__btn ${filter === null ? "filters__btn--active" : ""}`}
-                aria-pressed={filter === null}
-                onClick={() => setFilter(null)}
-            >Tous</button>
-            {categories.map((category) => (
+            {options.map((option) => (
                 <button
                     type="button"
-                    className={`filters__btn ${filter === category ? "filters__btn--active" : ""}`}
-                    aria-pressed={filter === category}
-                    key={category}
-                    onClick={() => setFilter(category)}
-                >{category}</button>
+                    className={`filters__btn ${filter === option.value ? "filters__btn--active" : ""}`}
+                    aria-pressed={filter === option.value}
+                    key={option.label}
+                    onClick={() => setFilter(option.value)}
+                >{option.label}</button>
             ))}
         </div>
     )
