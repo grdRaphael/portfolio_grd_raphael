@@ -6,17 +6,19 @@ import './Layout.scss'
 import Background from "../Background/Background"
 
 const Layout = () => {
-    const { pathname, hash } = useLocation()
+    const { pathname, hash, key } = useLocation()
 
     // React Router ne gère pas le défilement : on va jusqu'à l'ancre (#projets…),
-    // sinon on remonte en haut à chaque changement de page
+    // sinon on remonte en haut à chaque changement de page.
+    // key change à chaque clic, même sur un lien vers l'adresse déjà affichée :
+    // recliquer sur « Projets » ramène donc bien à la section
     useEffect(() => {
         if (hash) {
             document.getElementById(hash.slice(1))?.scrollIntoView()
         } else {
             window.scrollTo(0, 0) // ramene la page tout en haut quand on change de page (pas de hash)
         }
-    }, [pathname, hash])
+    }, [pathname, hash, key])
     return (
         <div className="layout">
             <a className="skip_link" href="#contenu">Aller au contenu</a>
