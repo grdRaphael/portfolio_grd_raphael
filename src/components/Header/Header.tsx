@@ -34,7 +34,7 @@ const Header = () => {
                     setActive((current) => (current === hash ? null : current))
                 }
             })
-        }, { rootMargin: "-40% 0px -55% 0px" })
+        }, { rootMargin: "-40% 0px -55% 0px" }) // la zone de l'écran à surveiller (une bande fine de 5%)
 
         links.forEach((link) => {
             const section = document.getElementById(link.hash.slice(1))
