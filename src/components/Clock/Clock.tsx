@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 // Heure locale en direct (idée vue chez Isaac Fayemi et Ev Astapov).
 const TIME_ZONE = "Indian/Reunion"
 
-const formatter = new Intl.DateTimeFormat("fr-FR", {
+const formatter = new Intl.DateTimeFormat("fr-FR", { // formatage de l'heure 
     timeZone: TIME_ZONE,
     hour: "2-digit",
     minute: "2-digit",
@@ -11,7 +11,7 @@ const formatter = new Intl.DateTimeFormat("fr-FR", {
 })
 
 const Clock = () => {
-    const [now, setNow] = useState(new Date())
+    const [now, setNow] = useState(new Date()) // on recupere l'heure
 
     useEffect(() => {
         const timer = setInterval(() => setNow(new Date()), 1000)
@@ -19,7 +19,7 @@ const Clock = () => {
         return () => clearInterval(timer)
     }, [])
 
-    return <time dateTime={now.toISOString()}>{formatter.format(now)}</time>
+    return <time dateTime={now.toISOString()}>{formatter.format(now)}</time> //un format pour le seo et un format lisible
 }
 
 export default Clock

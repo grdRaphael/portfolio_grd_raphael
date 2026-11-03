@@ -61,7 +61,7 @@ const Header = () => {
                     className="header_toggle"
                     aria-expanded={open}
                     aria-controls="navigation-principale"
-                    onClick={() => setOpen((current) => !current)}
+                    onClick={() => setOpen((current) => !current)} // interrupteur on/off
                 >
                     <span className="sr_only">Menu</span>
                     <span className="header_toggle_bar header_toggle_bar--top" aria-hidden="true" />

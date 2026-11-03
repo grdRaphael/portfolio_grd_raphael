@@ -15,7 +15,7 @@ const myEmail = atob("Z3JvbmRpbnJhcGhhZWxAbGl2ZS5mcg==")
 const FORMSPREE_URL = "https://formspree.io/f/xjyyyrbo"
 
 // Un seul état pour l'envoi : il ne peut pas être « en cours » et « envoyé » en même temps
-type Status = "idle" | "sending" | "sent" | "error"
+type Status = "idle" | "sending" | "sent" | "error" // idle == au repos / inactif
 
 const Contact = () => {
     const [errors, setErrors] = useState<Errors>({})
@@ -48,13 +48,13 @@ const Contact = () => {
         if (message.length < 10) newErrors.message = "Votre message doit faire au moins 10 caractères."
 
         setErrors(newErrors)
-        const firstError = Object.keys(newErrors)[0]
+        const firstError = Object.keys(newErrors)[0] //renvoie les clés dans l'ordre où elles sont ajoutés
         if (firstError) {
             setStatus("idle")
             // Le focus va sur le premier champ en erreur : au clavier ou au lecteur d'écran,
             // on entend tout de suite quel champ corriger et pourquoi (aria-describedby)
-            const field = form.elements.namedItem(firstError)
-            if (field instanceof HTMLElement) field.focus()
+            const field = form.elements.namedItem(firstError) // on retrouve le champs dans le formulaire 
+            if (field instanceof HTMLElement) field.focus() // et on lui donne le focus
             return
         }
 
