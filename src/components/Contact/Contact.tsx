@@ -1,4 +1,6 @@
 import { useState, type SubmitEvent } from "react"
+import { Link } from "react-router-dom"
+import { myEmail } from "../../utils/email"
 import "./Contact.scss"
 
 type Errors = {
@@ -6,10 +8,6 @@ type Errors = {
     email?: string
     message?: string
 }
-
-// Adresse encodée en Base64 et décodée par le navigateur : elle n'apparaît en clair
-// ni dans le HTML ni dans le JavaScript publié, les robots qui cherchent des « @ » ne la trouvent pas
-const myEmail = atob("Z3JvbmRpbnJhcGhhZWxAbGl2ZS5mcg==")
 
 // Formspree reçoit le formulaire et me le transfère par e-mail : pas de serveur à héberger
 const FORMSPREE_URL = "https://formspree.io/f/xjyyyrbo"
@@ -127,6 +125,13 @@ const Contact = () => {
                         aria-describedby={errors.message ? "message-error" : undefined} />
                     {errors.message && <p className="contact_error" id="message-error">{errors.message}</p>}
                 </div>
+
+                {/* RGPD : on informe au moment où les données sont saisies, pas seulement dans les mentions légales */}
+                <p className="contact_privacy">
+                    Vos nom, e-mail et message transitent par Formspree, un service américain,
+                    et servent uniquement à vous répondre.{" "}
+                    <Link to={{ pathname: "/mentions-legales", hash: "#donnees" }}>En savoir plus sur vos données</Link>
+                </p>
 
                 {/* Désactivé pendant l'envoi : un double clic n'envoie pas deux fois le message */}
                 <button className="contact_submit" type="submit" disabled={status === "sending"}>

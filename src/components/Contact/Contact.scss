@@ -74,6 +74,16 @@
     }
 }
 
+// Blanc pur et non $text-color--soft : pas de verre derrière ce texte, comme dans le pied de page
+.contact_privacy {
+    font-size: 14px;
+
+    a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+}
+
 .contact_submit {
     align-self: flex-start;
     padding: 14px 32px;
