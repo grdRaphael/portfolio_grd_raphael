@@ -1,0 +1,55 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.legal {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 40px;
+}
+
+.legal_updated {
+    font-size: 15px;
+    margin-bottom: 16px;
+}
+
+// Mêmes rangées « titre | texte » que les rubriques de la fiche projet
+.legal_section {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+    padding: 24px 0;
+    border-top: 1px solid $glass-border;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+.legal_section_title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-top: 4px;
+}
+
+.legal_body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    // Blanc pur : pas de verre derrière ce texte
+    p {
+        max-width: 68ch;
+        font-size: 17px;
+    }
+
+    a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        // Les longues adresses (e-mail) passent à la ligne au lieu de déborder sur mobile
+        overflow-wrap: anywhere;
+    }
+}

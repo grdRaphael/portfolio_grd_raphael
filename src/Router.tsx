@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import ProjectPage from './pages/ProjectPage/ProjectPage'
 import Error from './pages/Error/Error'
+import Legal from './pages/Legal/Legal'
 import Layout from './components/Layout/Layout'
 
 const Router = () => {
@@ -11,7 +12,8 @@ const Router = () => {
                 <Route element={<Layout />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/projet/:id" element={<ProjectPage />} />
-                    <Route path="*" element={<Error />} />
+                    <Route path="/mentions-legales" element={<Legal />} />
+                    <Route path="*"element={<Error />} />
                 </Route>
             </Routes>
         </BrowserRouter>
